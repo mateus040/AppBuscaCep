@@ -52,5 +52,30 @@ namespace AppBuscaCep.Service
 
             return arr_bairros;
         }
+
+        /**
+         * Obtem a Lista de Logradouros(rua) de um bairro
+         */
+        public static async Task<List<Logradouro>> GetLogradourosByBairroAndCidade(string bairro, int id_cidade)
+        {
+            List<Logradouro> arr_logradouros = new List<Logradouro>();
+
+            using (HttpClient client = new HttpClient())
+            {
+
+                HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/logradouro/by-bairro?id_cidade=4874&bairro=" + id_cidade + "&bairro" + bairro);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string json = response.Content.ReadAsStringAsync().Result;
+
+                    arr_logradouros = JsonConvert.DeserializeObject<List<Logradouro>>(json);
+                }
+                else
+                    throw new Exception(response.RequestMessage.Content.ToString());
+            }
+
+            return arr_logradouros;
+        }
     }
 }
