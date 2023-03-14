@@ -2,11 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBuscaCep.View.BairroPorCidade">
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout Orientation="Horizontal">
+                <SearchBar x:Name="txt_cidade"
+                           Placeholder="Qual é a sua cidade?" />
+                <Button Text="Buscar" Clicked="Button_Clicked" />
+            </StackLayout>
+            
         </StackLayout>
     </ContentPage.Content>
+    
 </ContentPage>
