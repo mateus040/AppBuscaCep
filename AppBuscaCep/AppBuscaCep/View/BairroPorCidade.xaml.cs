@@ -16,7 +16,6 @@ namespace AppBuscaCep.View
     public partial class BairroPorCidade : ContentPage
     {
         ObservableCollection<Cidade> lista_cidades = new ObservableCollection<Cidade>();
-
         ObservableCollection<Bairro> lista_bairros = new ObservableCollection<Bairro>();
 
         public BairroPorCidade()
@@ -24,7 +23,6 @@ namespace AppBuscaCep.View
             InitializeComponent();
 
             pck_cidade.ItemsSource= lista_cidades;
-
             lst_bairros.ItemsSource= lista_bairros;
         }
 
