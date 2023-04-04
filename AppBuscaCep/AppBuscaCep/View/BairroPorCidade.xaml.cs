@@ -42,7 +42,8 @@ namespace AppBuscaCep.View
 
                 arr_cidades.ForEach(i => lista_cidades.Add(i));
             }
-            catch(Exception ex)
+
+            catch (Exception ex)
             {
                 await DisplayAlert("Ops", ex.Message, "OK");
             }
@@ -54,15 +55,15 @@ namespace AppBuscaCep.View
             {
                 Picker disparador = sender as Picker;
 
-                Cidade cidade_selecionada = disparador.SelectedItem as Cidade;
+                Cidade cidade_selecionado = disparador.SelectedItem as Cidade;
 
-                List<Bairro> arr_bairros = await DataService.GetBairrosByIdCidade(cidade_selecionada.id_cidade);
+                List<Bairro> arr_bairros = await DataService.GetBairrosByIdCidade(cidade_selecionado.id_cidade);
 
                 lista_bairros.Clear();
 
                 arr_bairros.ForEach(i => lista_bairros.Add(i));
-            }
-            catch(Exception ex)
+
+            } catch (Exception ex)
             {
                 await DisplayAlert("Ops", ex.Message, "OK");
             }

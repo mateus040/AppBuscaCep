@@ -31,18 +31,15 @@
 
 
                     <Button Grid.Row="0" Grid.Column="1"
-                            Text="Buscar Cidade"
-                            Style="{ StaticResource ButtonStyle }" />
-
-
-                    <Button Grid.Row="1" Grid.Column="0"
-                            Text="Buscar Ruas"
+                            Text="Buscar Bairro"
                             Style="{ StaticResource ButtonStyle }"
                             Clicked="Button_Clicked_1" />
 
-                    <!--<Button Grid.Row="1" Grid.Column="1"
-                            Text="Teste"
-                            Style="{ StaticResource ButtonStyle }" /> -->
+
+                    <Button Grid.Row="1" Grid.Column="0"
+                            Text="Buscar Endereço"
+                            Style="{ StaticResource ButtonStyle }"
+                            Clicked="Button_Clicked_2"/>
 
                 </Grid>
             </ScrollView>

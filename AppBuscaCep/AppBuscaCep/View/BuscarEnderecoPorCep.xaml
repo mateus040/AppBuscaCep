@@ -16,43 +16,57 @@
 
             <ListView x:Name="lst_end" Margin="5">
                 <ListView.Header>
-                    <Grid ColumnDefinitions="Auto, *,*,*, Auto"
-                          RowDefinitions="Auto" BackgroundColor="DarkGreen">
+                    <Grid ColumnDefinitions="Auto, *, *, Auto"
+                          RowDefinitions="Auto">
 
-                        <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"
-                               Text="Cidade" FontAttributes="Bold" FontSize="13" TextColor="#fff"
-                               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" 
+                               Text="CEP" FontAttributes="Bold" FontSize="13" 
+                               HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="15" />
+
+                        <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="Center"
+                               Text="Bairro" FontAttributes="Bold" FontSize="13"
+                               HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
 
                         <Label Grid.Row="0" Grid.Column="2" HorizontalOptions="Center"
-                               Text="Cidade" FontAttributes="Bold" FontSize="13" TextColor="white"
-                               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                               Text="Cidade" FontAttributes="Bold" FontSize="13"
+                               HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
 
-
-                        <Label Grid.Row="0" Grid.Column="3" HorizontalOptions="Center"
-                               Text="Código do IBGE" FontAttributes="Bold" FontSize="13" TextColor="white"
-                               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Label Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" 
+                               Text="Código do IBGE" FontAttributes="Bold" FontSize="13" 
+                               HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="15" />
                     </Grid>
                 </ListView.Header>
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid ColumnDefinitions="Auto, *,*,*, Auto"
-                                  RowDefinitions="110">
+                            <Grid ColumnDefinitions="Auto, *, *, Auto"
+                                  RowDefinitions="Auto">
 
                                 <Label Grid.Row="0" Grid.Column="0"
-                                       Text="{Binding CEP}" TextColor="#000"
-                                       FontSize="12" />
+                                       Text="{Binding CEP}" TextColor="#000" HorizontalOptions="Center"
+                                       FontSize="13" FontAttributes="Bold"
+                                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                       Margin="15"/>
 
-                                <Label Grid.Row="0" Grid.Column="1"
+                                <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="Center"
                                        Grid.ColumnSpan="1"
                                        Text="{Binding descricao_bairro}" TextColor="#000"
-                                       FontSize="12" />
+                                       FontSize="13" FontAttributes="Bold"
+                                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
 
                                 <Label Grid.Row="0" Grid.Column="2"
-                                       Grid.ColumnSpan="3"
+                                       Grid.ColumnSpan="2" HorizontalOptions="Center"
+                                       Text="{Binding descricao_cidade}" TextColor="#000"
+                                       FontSize="13" FontAttributes="Bold" HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"/>
+
+                                <Label Grid.Row="0" Grid.Column="3"
+                                       Grid.ColumnSpan="3" HorizontalOptions="Center"
                                        Text="{Binding codigo_cidade_ibge}" TextColor="#000"
-                                       FontSize="12" />
+                                       FontSize="13" FontAttributes="Bold"
+                                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                       Margin="15" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
