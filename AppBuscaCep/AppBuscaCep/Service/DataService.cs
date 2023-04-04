@@ -64,23 +64,21 @@ namespace AppBuscaCep.Service
          */
         public static async Task<List<Cidade>> GetCidadesByEstado(string uf)
         {
-            List<Cidade> arr_cidades = new List<Cidade>();
+            List<Cidade> arr_cidade = new List<Cidade>();
 
             using (HttpClient client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync("http://10.0.2.2:8000/cidade/by-uf?uf=" + uf);
-
                 if (response.IsSuccessStatusCode)
                 {
                     string json = response.Content.ReadAsStringAsync().Result;
-
-                    arr_cidades = JsonConvert.DeserializeObject<List<Cidade>>(json);
+                    arr_cidade = JsonConvert.DeserializeObject<List<Cidade>>(json);
                 }
                 else
                     throw new Exception(response.RequestMessage.Content.ToString());
             }
 
-            return arr_cidades;
+            return arr_cidade;
         }
 
         /**
